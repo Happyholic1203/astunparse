@@ -535,7 +535,7 @@ class Unparser:
             self._write_constant(t.value)
 
     def _Num(self, t):
-        repr_n = repr(t.n)
+        repr_n = repr(t.n).rstrip('L')
         if six.PY3:
             self.write(repr_n.replace("inf", INFSTR))
         else:
